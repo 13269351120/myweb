@@ -5,7 +5,7 @@ from django.db import models
 
 from django.utils import timezone
 
-class Post(models.Model):
+class Dailyjobs(models.Model):
 	
 	testname = models.CharField(max_length=50)
 	
@@ -24,5 +24,5 @@ class Post(models.Model):
 		
 	
 	def __unicode__(self):
-		return self.parameters  
+		return self.testname  
 		

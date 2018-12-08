@@ -3,10 +3,10 @@ from django.contrib import admin
 # Register your models here.
 
 
-from .models import Post  
+from .models import Dailyjobs  
 
-class PostAdmin(admin.ModelAdmin):
+class DailyjobsAdmin(admin.ModelAdmin):
 	list_display = ('pub_date','testname','parameters','user','state')
 
-admin.site.register(Post , PostAdmin)
+admin.site.register(Dailyjobs , DailyjobsAdmin)
 
