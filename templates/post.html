@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--è§†å£å¤§å°ï¼Œåˆå§‹åŒ–ç§»åŠ¨æµè§ˆæ˜¾ç¤º-->
-    <!-- ä¸Šè¿°3ä¸ªmetaæ ‡ç­¾*å¿…é¡»*æ”¾åœ¨æœ€å‰é¢ï¼Œä»»ä½•å…¶ä»–å†…å®¹éƒ½*å¿…é¡»*è·Ÿéšå…¶åï¼ -->
+    <!--ÊÓ¿Ú´óĞ¡£¬³õÊ¼»¯ÒÆ¶¯ä¯ÀÀÏÔÊ¾-->
+    <!-- ÉÏÊö3¸ömeta±êÇ©*±ØĞë*·ÅÔÚ×îÇ°Ãæ£¬ÈÎºÎÆäËûÄÚÈİ¶¼*±ØĞë*¸úËæÆäºó£¡ -->
     <title>test</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- HTML5 shim å’Œ Respond.js æ˜¯ä¸ºäº†è®© IE8 æ”¯æŒ HTML5 å…ƒç´ å’Œåª’ä½“æŸ¥è¯¢ï¼ˆmedia queriesï¼‰åŠŸèƒ½ -->
-    <!-- è­¦å‘Šï¼šé€šè¿‡ file:// åè®®ï¼ˆå°±æ˜¯ç›´æ¥å°† html é¡µé¢æ‹–æ‹½åˆ°æµè§ˆå™¨ä¸­ï¼‰è®¿é—®é¡µé¢æ—¶ Respond.js ä¸èµ·ä½œç”¨ -->
+    <!-- HTML5 shim ºÍ Respond.js ÊÇÎªÁËÈÃ IE8 Ö§³Ö HTML5 ÔªËØºÍÃ½Ìå²éÑ¯£¨media queries£©¹¦ÄÜ -->
+    <!-- ¾¯¸æ£ºÍ¨¹ı file:// Ğ­Òé£¨¾ÍÊÇÖ±½Ó½« html Ò³ÃæÍÏ×§µ½ä¯ÀÀÆ÷ÖĞ£©·ÃÎÊÒ³ÃæÊ± Respond.js ²»Æğ×÷ÓÃ -->
     <!--[if lt IE 9]>
       <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
@@ -21,15 +21,15 @@
   </head>
   <body>
 
-    <!-- jQuery (Bootstrap çš„æ‰€æœ‰ JavaScript æ’ä»¶éƒ½ä¾èµ– jQueryï¼Œæ‰€ä»¥å¿…é¡»æ”¾åœ¨å‰è¾¹) -->
+    <!-- jQuery (Bootstrap µÄËùÓĞ JavaScript ²å¼ş¶¼ÒÀÀµ jQuery£¬ËùÒÔ±ØĞë·ÅÔÚÇ°±ß) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-    <!-- åŠ è½½ Bootstrap çš„æ‰€æœ‰ JavaScript æ’ä»¶ã€‚ä½ ä¹Ÿå¯ä»¥æ ¹æ®éœ€è¦åªåŠ è½½å•ä¸ªæ’ä»¶ã€‚ -->
+    <!-- ¼ÓÔØ Bootstrap µÄËùÓĞ JavaScript ²å¼ş¡£ÄãÒ²¿ÉÒÔ¸ù¾İĞèÒªÖ»¼ÓÔØµ¥¸ö²å¼ş¡£ -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
 
     <div class="page-header">
-        <h1>æµ‹è¯•ç‰ˆ:è¯·è¾“å…¥å‚æ•°<small>version1.0</small></h1>
+        <h1>²âÊÔ°æ:ÇëÊäÈë²ÎÊı<small>version1.0</small></h1>
     </div>
-    <!--æˆ‘æ˜¯inputæ¡†-->
+    <!--ÎÒÊÇinput¿ò-->
     <div class="input-group">
         <span class="label label-success">bin:</span>
         <input type="text" class="form-control" size = "50" name = "bin" value="/home/luban/jincheng_test/colmap/build/src/exe/" aria-describedby="sizing-addon2">
@@ -42,10 +42,27 @@
 		<span class="label label-success">Max images from geomery verify:</span>
         <input type="text" name = "Max_images_from_geomery_verify" class="form-control" value="10" aria-describedby="sizing-addon2">
 	</div>	
-	<div class="input-group">
-		<span class="label label-danger">Use model focal length(0 / 1):</span>
-        <input type="text" name = "Use_model_focal_length" class="form-control" value="1" aria-describedby="sizing-addon2">
-	</div>
+	
+	
+	<div class="input-group">	
+		<span class="label label-success">Camera focal length type:</span>
+        <input type="text" name = "Camera_focal_length_type" class="form-control" value="2" aria-describedby="sizing-addon2">
+	</div>	
+	
+	<div class="input-group">	
+		<span class="label label-success">Provided focal length:</span>
+        <input type="text" name = "Provided_focal_length" class="form-control" value="1850.0" aria-describedby="sizing-addon2">
+	</div>	
+	
+	<div class="input-group">	
+		<span class="label label-success">Estimate focal length:</span>
+        <input type="text" name = "Estimate_focal_length" class="form-control" value="0" aria-describedby="sizing-addon2">
+	</div>	
+	
+	
+	
+
+	
 	<div class="input-group">	
 		<span class="label label-success">Feature extraction device index:</span>
         <input type="text" name = "Feature_extraction_device_index" class="form-control" value="0" aria-describedby="sizing-addon2">
@@ -163,7 +180,7 @@
 
     <!-- <div class="btn-group btn-group-lg" role="group" aria-label="..."> -->
     <!--   <button type="button" class="btn btn-default">submit</button> -->
-		<p style='font-family:å¾®è½¯é›…é»‘;font-size:16pt;font-weight:bold;'> 
+		<p style='font-family:Î¢ÈíÑÅºÚ;font-size:16pt;font-weight:bold;'> 
 	<!--		<a href = '/postlist/'> submit </a>  -->
     </div>
 	<br>

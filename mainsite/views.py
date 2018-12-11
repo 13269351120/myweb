@@ -56,7 +56,10 @@ def postlist(request):
 			bin = form.cleaned_data['bin']
 			Geomery_verify_ratio = form.cleaned_data['Geomery_verify_ratio']
 			Max_images_from_geomery_verify = form.cleaned_data['Max_images_from_geomery_verify'] 
-			Use_model_focal_length = form.cleaned_data['Use_model_focal_length'] 
+			#Use_model_focal_length = form.cleaned_data['Use_model_focal_length'] 
+			Camera_focal_length_type = form.cleaned_data['Camera_focal_length_type']
+			Provided_focal_length = form.cleaned_data['Provided_focal_length']
+			Estimate_focal_length = form.cleaned_data['Estimate_focal_length']
 			Feature_extraction_device_index = form.cleaned_data['Feature_extraction_device_index'] 
 			Perf_test = form.cleaned_data['Perf_test'] 
 			Index_type = form.cleaned_data['Index_type'] 
@@ -90,7 +93,7 @@ def postlist(request):
 			print("bin:" ,bin)
 			print("Geomery_verify_ratio",Geomery_verify_ratio)
 			print("Max_images_from_geomery_verify",Max_images_from_geomery_verify)
-			print("Use_model_focal_length",Use_model_focal_length)
+			#print("Use_model_focal_length",Use_model_focal_length)
 			print("Feature_extraction_device_index",Feature_extraction_device_index)
 			print("Perf_test",Perf_test)
 			print("Index_type",Index_type)
@@ -121,14 +124,14 @@ def postlist(request):
 			print("------------------------------------------------",)
 			
 			now = datetime.datetime.now().strftime('%Y%m%d_%H_%M_%S')
-			dirname = "/home/sth/dailyjobs/shell/"
+			dirname = "/nfs/project/localization/monitor/dailyjobs/" + str(User) + "/"
 			print(dirname)
 			if(os.path.exists(dirname) == False):
 				os.makedirs(dirname)
 			else :
 				print("目录已经存在")
 			
-			filename = dirname + now+ "_"+ now +".sh"
+			filename = dirname + Testname + "_" + now +".sh"
 			print(filename)
 
 			file = open(filename,"w")
@@ -141,7 +144,9 @@ def postlist(request):
 			"$bin/localization_server \ \n \
 			--SiftMatching.geomery_verify_ratio " + str(Geomery_verify_ratio) + " \  \n \
 			--SiftMatching.max_images_from_geomery_verify "+ str(Max_images_from_geomery_verify)+ " \ \n \
-			--Localization.use_model_focal_length "+ str(Use_model_focal_length) +"  \ \n \
+			--Localization.camera_focal_length_type " + str(camera_focal_length_type) + "\ \n \
+			--Localization.provided_focal_length " + str(provided_focal_length) + "\ \n \
+			--Localization.estimate_focal_length " + str(estimate_focal_length) + "\ \n \
 			--Localization.feature_extraction_device_index "+ str(Feature_extraction_device_index) +"\n \
 			--Localization.perf_test "+ str(Perf_test) +" \ \n \
 			--Localization.index_type "+ str(Index_type) +" \ \n \
@@ -174,10 +179,12 @@ def postlist(request):
 
 			file.close()
 			
+     
+      
 			
 		else :
 			print("form is not valid")
-	#		message = "填写内容不完整,请检查"
+	#		message =
 	if(request.method == 'GET'):
 		print("get get")
 	posts = Post.objects.all() 

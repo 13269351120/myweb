@@ -5,7 +5,11 @@ class LogForm(forms.Form):
 	bin = forms.CharField(max_length = 200)
 	Geomery_verify_ratio = forms.CharField(max_length = 200)
 	Max_images_from_geomery_verify= forms.CharField(max_length = 200)
-	Use_model_focal_length= forms.CharField(max_length = 200)
+	
+	Camera_focal_length_type = forms.CharField(max_length = 200) 
+	Provided_focal_length = forms.CharField(max_length = 200)
+	Estimate_focal_length = forms.CharField(max_length = 200)
+	
 	Feature_extraction_device_index= forms.CharField(max_length = 200)
 	Perf_test= forms.CharField(max_length = 200)
 	Index_type= forms.CharField(max_length = 200)
