@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*- 
+from django import forms 
+
+class LogForm(forms.Form):
+	bin = forms.CharField(max_length = 200)
+	Geomery_verify_ratio = forms.CharField(max_length = 200)
+	Max_images_from_geomery_verify= forms.CharField(max_length = 200)
+	
+	Camera_focal_length_type = forms.CharField(max_length = 200) 
+	Provided_focal_length = forms.CharField(max_length = 200)
+	Estimate_focal_length = forms.CharField(max_length = 200)
+	
+	Feature_extraction_device_index= forms.CharField(max_length = 200)
+	Perf_test= forms.CharField(max_length = 200)
+	Index_type= forms.CharField(max_length = 200)
+	Max_num_images= forms.CharField(max_length = 200)
+	Abs_pose_min_num_inliers= forms.CharField(max_length = 200)
+	Min_focal_length_ratio= forms.CharField(max_length = 200)
+	Max_focal_length_ratio= forms.CharField(max_length = 200)
+	Max_matching_distance= forms.CharField(max_length = 200)
+	Max_localization_distance_against_gps= forms.CharField(max_length = 200)
+	Max_image_size= forms.CharField(max_length = 200)
+	Max_num_features= forms.CharField(max_length = 200)
+	Gps_filter= forms.CharField(max_length = 200)
+	Faiss_knn_num= forms.CharField(max_length = 200)
+	Min_co_visible_matches_num= forms.CharField(max_length = 200)
+	Geo_verify_type= forms.CharField(max_length = 200)
+	Verify_score_threshold= forms.CharField(max_length = 200)
+	Temp_gpu_memory= forms.CharField(max_length = 200)
+	Use_opt_siftgpu= forms.CharField(max_length = 200)
+	Convert2grey_gpu= forms.CharField(max_length = 200)
+	DoPopulate= forms.CharField(max_length = 200)
+	Faiss_gpu_device_index= forms.CharField(max_length = 200)
+	Index_path= forms.CharField(max_length = 200)
+	Model_path= forms.CharField(max_length = 200)
+	Perf_test_images= forms.CharField(max_length = 200)
+	Database_path= forms.CharField(max_length = 200)
+	User= forms.CharField(max_length = 200)
+	Testname= forms.CharField(max_length = 200)
+	

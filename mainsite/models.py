@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*- 
 from django.db import models
 
 # Create your models here.
@@ -14,7 +15,9 @@ class Post(models.Model):
 	bin = models.CharField(max_length = 200 , default = "/home/luban/jincheng_test/colmap/build/src/exe/")
 	geomery_verify_ratio = models.FloatField(default=0.6)
 	max_images_from_geomery_verify = models.PositiveIntegerField(default=10)
-	use_model_focal_length = models.IntegerField(default=1)
+	camera_focal_length_type = models.IntegerField(default=2)
+	provided_focal_length = models.FloatField(default = 1850.0)
+	estimate_focal_length = models.FloatField(default = 0 ) 
 	feature_extraction_device_index = models.IntegerField(default = 0)
 	perf_test = models.IntegerField(default=1)
 	index_type  = models.CharField(max_length = 20 , default = "faiss")

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <form action="postlist" method="post" > 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>test </title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+    <div class="page-header">
+        <h1>test<small>version1.0</small></h1>
+    </div>
+    
+    <div class="input-group">
+        <span class="label label-success">bin:</span>
+        <input type="text" class="form-control" size = "50" name = "bin" value="/home/luban/jincheng_test/colmap/build/src/exe/" aria-describedby="sizing-addon2">
+	</div>
+	<div class="input-group">
+		<span class="label label-success">Geomery verify ratio:</span>
+        <input type="text"  name = "Geomery_verify_ratio" class="form-control" value = "0.6"  aria-describedby="sizing-addon2">
+	</div>
+	<div class="input-group">	
+		<span class="label label-success">Max images from geomery verify:</span>
+        <input type="text" name = "Max_images_from_geomery_verify" class="form-control" value="10" aria-describedby="sizing-addon2">
+	</div>	
+	
+	
+	<div class="input-group">	
+		<span class="label label-success">Camera focal length type:</span>
+        <input type="text" name = "Camera_focal_length_type" class="form-control" value="2" aria-describedby="sizing-addon2">
+	</div>	
+	
+	<div class="input-group">	
+		<span class="label label-success">Provided focal length:</span>
+        <input type="text" name = "Provided_focal_length" class="form-control" value="1850.0" aria-describedby="sizing-addon2">
+	</div>	
+	
+	<div class="input-group">	
+		<span class="label label-success">Estimate focal length:</span>
+        <input type="text" name = "Estimate_focal_length" class="form-control" value="0" aria-describedby="sizing-addon2">
+	</div>	
+	
+	<div class="input-group">	
+		<span class="label label-success">Feature extraction device index:</span>
+        <input type="text" name = "Feature_extraction_device_index" class="form-control" value="0" aria-describedby="sizing-addon2">
+	</div>
+	<div class="input-group">
+		<span class="label label-danger">Perf test(0 / 1):</span>
+        <input type="text" name = "Perf_test" class="form-control" value="1" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">Index type:</span>
+        <input type="text" name = "Index_type" class="form-control" value="faiss" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">Max num images:</span>
+        <input type="text" name = "Max_num_images"class="form-control" value="20" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">	
+		<span class="label label-success">Abs pose min num inliers:</span>
+        <input type="text" name = "Abs_pose_min_num_inliers" class="form-control" value="6" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">Min focal length ratio:</span>
+        <input type="text" name = "Min_focal_length_ratio"class="form-control" value="0.8" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">Max focal length ratio:</span>
+        <input type="text" name = "Max_focal_length_ratio"class="form-control" value="1.2" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">Max matching distance:</span>
+        <input type="text" name = "Max_matching_distance" class="form-control" value="50" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">Max localization distance against gps:</span>
+        <input type="text" name = "Max_localization_distance_against_gps" class="form-control" value="25" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">Max image size:</span>
+        <input type="text" name = "Max_image_size"class="form-control" value="2500" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">Max num features:</span>
+        <input type="text" name = "Max_num_features"class="form-control" value="2500" aria-describedby="sizing-addon2">
+	</div>	
+	
+	<div class="input-group">
+		<span class="label label-danger">Gps filter(0 / 1):</span>
+        <input type="text" name = "Gps_filter"class="form-control" value="0" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">Faiss knn num:</span>
+        <input type="text" name = "Faiss_knn_num" class="form-control" value="36" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">Min co visible matches num:</span>
+        <input type="text" name = "Min_co_visible_matches_num" class="form-control" value="3" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-danger">Geo verify type(neither /  two_view_geo_verify /  vote_and_verify ):</span>
+        <input type="text" name = "Geo_verify_type" class="form-control" value="neither" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">Verify score threshold:</span>
+        <input type="text" name = "Verify_score_threshold" class="form-control" value="5" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">Temp gpu memory:</span>
+        <input type="text" name = "Temp_gpu_memory" class="form-control" value="204857600" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">Use opt siftgpu(0 / 1):</span>
+        <input type="text" name = "Use_opt_siftgpu"class="form-control" value="0" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">Convert2grey gpu(0 / 1):</span>
+        <input type="text" name = "Convert2grey_gpu" class="form-control" value="0" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">DoPopulate(0 / 1):</span>
+        <input type="text" name = "DoPopulate"class="form-control" value="1" aria-describedby="sizing-addon2">
+	</div>
+	<div class="input-group">
+		<span class="label label-success">Faiss gpu device index:</span>
+        <input type="text" name = "Faiss_gpu_device_index"class="form-control" value="0" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">Index path:</span>
+        <input type="text" name = "Index_path"class="form-control" size = "100" value="/nfs/project/localization/faissindex/index_trained_SoftwareParkOne20180510_trained_NoPopulate.faissindex" aria-describedby="sizing-addon2">
+	</div>
+	<div class="input-group">
+		<span class="label label-danger">Model path:</span>
+        <input type="text" name = "Model_path" class="form-control" size = "100" value="/nfs/project/daily_3drecon/20181122/3drecon/test_partial_ba/samsung_starneto_1fps/sparse" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-danger">Perf test images:</span>
+        <input type="text" name = "Perf_test_images"class="form-control" size = "100" value="/nfs/project/localization/measure_set/software_park_two/20181129_samsung_test_1fps_00_01_filtered.txt" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-danger">Database path:</span>
+        <input type="text" name = "Database_path" class="form-control" size = "100" value="/nfs/project/daily_3drecon/20181122/3drecon/databases/samsung_starneto_1fps/database.db" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">User(To make it easier for you to find results):</span>
+        <input type="text" name = "User"class="form-control" value="didi" aria-describedby="sizing-addon2">
+	</div>	
+	<div class="input-group">
+		<span class="label label-success">Testname(To make it easier for you to find results):</span>
+        <input type="text" name = "Testname"class="form-control" value="test" aria-describedby="sizing-addon2">
+    </div>
+    
+
+    <!-- <div class="btn-group btn-group-lg" role="group" aria-label="..."> -->
+    <!--   <button type="button" class="btn btn-default">submit</button> -->
+		<p style='font-family:微软雅黑;font-size:16pt;font-weight:bold;'> 
+	<!--		<a href = '/postlist/'> submit </a>  -->
+    </div>
+	<br>
+    <input type="submit" value="Submit" /> 
+	 <!--{%if message %}
+		<div class = 'alert alert-warning'>{{message}} </div>
+	{% endif %} -->
+	
+	</form> 
+  </body>
+  <hr>
+  <br>
+  <br>
