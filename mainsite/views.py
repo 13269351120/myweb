@@ -178,11 +178,44 @@ def postlist(request):
 
 
 			file.write(content)
-
+			
 
 			file.close()
-			
-     
+			# post_detail =  Post()  
+			# post_detail.testname = Testname 
+			# post_detail.bin = bin 
+			# post_detail.geomery_verify_ratio = Geomery_verify_ratio
+			# post_detail.max_images_from_geomery_verify = Max_images_from_geomery_verify
+			# post_detail.camera_focal_length_type = Camera_focal_length_type 
+			# post_detail.provided_focal_length = Provided_focal_length
+			# post_detail.estimate_focal_length = Estimate_focal_length 
+			# post_detail.feature_extraction_device_index = Feature_extraction_device_index
+			# post_detail.perf_test = Perf_test
+			# post_detail.index_type = Index_type 
+			# post_detail.max_num_images = Max_num_images  
+			# post_detail.abs_pose_min_num_inliers = Abs_pose_min_num_inliers 
+			# post_detail.min_focal_length_ratio = Min_focal_length_ratio 
+			# post_detail.max_focal_length_ratio = Max_focal_length_ratio
+			# post_detail.max_matching_distance = Max_matching_distance 
+			# post_detail.max_localization_distance_against_gps = Max_localization_distance_against_gps
+			# post_detail.max_image_size = Max_image_size
+			# post_detail.max_num_features = Max_num_features 
+			# post_detail.gps_filter = Gps_filter 
+			# post_detail.faiss_gpu_device_index = Faiss_gpu_device_index
+			# post_detail.min_co_visible_matches_num = Min_co_visible_matches_num
+			# post_detail.geo_verify_type = Geo_verify_type
+			# post_detail.verify_score_threshold = Verify_score_threshold 
+			# post_detail.temp_gpu_memory = Temp_gpu_memory 
+			# post_detail.use_opt_siftgpu = Use_opt_siftgpu 
+			# post_detail.convert2grey_gpu = Convert2grey_gpu
+			# post_detail.DoPopulate = DoPopulate
+			# post_detail.faiss_gpu_device_index = Faiss_gpu_device_index
+			# post_detail.index_path = Index_path 
+			# post_detail.model_path = Model_path
+			# post_detail.perf_test_images = Perf_test_images
+			# post_detail.database_path = Database_path
+			 
+			# post_detail.state = "0"
       
 			
 		else :
