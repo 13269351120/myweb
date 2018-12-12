@@ -126,8 +126,8 @@ def postlist(request):
 			print("------------------------------------------------",)
 			
 			now = datetime.datetime.now().strftime('%Y%m%d_%H_%M_%S')
-			#dirname = "/nfs/project/localization/monitor/dailyjobs/" + str(User) + "/"
-			dirname = "/home/sth/nfs/project/localization/monitor/dailyjobs/" + str(User) + "/"
+			dirname = "/nfs/project/localization/monitor/dailyjobs/" + str(User) + "/"
+			#dirname = "/home/sth/nfs/project/localization/monitor/dailyjobs/" + str(User) + "/"
 			print(dirname)
 			if(os.path.exists(dirname) == False):
 				os.makedirs(dirname)
