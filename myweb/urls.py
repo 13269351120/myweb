@@ -21,6 +21,6 @@ from dailyjobs.views import result
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 	url(r'^$',ChooseParameters),
-	url(r'^dailyresult/',result),
-	url(r'^postlist',postlist),
+	url(r'^dailyresult/(.+)/$',result),
+	url(r'^postlist/',postlist),
 ]
