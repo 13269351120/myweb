@@ -89,7 +89,11 @@ def read_performance_txt(performance_txt , task_name):
             line = perf_file.readline()
             if line == '':
                 break
-            content += '<td>' +line.split(':')[1]+ '</td>'
+            arr = line.split(':')
+            if(len(arr) < 2) :
+                content += '<td> NONE </td>' 
+            else :
+                content += '<td>' +line.split(':')[1]+ '</td>'
         content += '</tr>'
         perf_file.close()
     return content
@@ -99,21 +103,23 @@ def read_performance_txt(performance_txt , task_name):
 if __name__ == "__main__":
     (all_path , task_names ) = gat_performance(task_path,"performance.txt")
     all_content = "" 
-    table_1 = open(os.path.join(template_path , '/1.html'),"r").read()
+    table_1 = open(os.path.join(template_path , '1.html'),"r").read()
     
-    table_3 = open(os.path.join(template_path , '/3.html'),"r").read()
+    table_3 = open(os.path.join(template_path , '3.html'),"r").read()
     
+    all_table2 = "" 
+
     htmlfile = open(template_path + "/report.html","w") 
-    htmlfile.write(table_1)
     for task_name in task_names : 
         (content , mean , median , rate , date) = deal_with_each_task(all_path , task_name) 
         all_content += content 
-        table_2 = open(os.path.join(template_path , '/2.html'),"r").read().replace("____ERRORTITLE____","error_"+task_name).replace("____RATETITLE____","rate_"+task_name).replace("____date____",date).replace("____Mean____",mean).replace("____Median____",median).replace("____rate____",rate)
-        htmlfile.write(table_2) 
-
-    htmlfile.replace("____TABLE____" , all_content)
-    htmlfile.write(table_3)       
-
+        table_2 = open(os.path.join(template_path , '2.html'),"r").read().replace("____ERRORTITLE____","error_"+task_name).replace("____RATETITLE____","rate_"+task_name).replace("____date____",str(date)).replace("____Mean____",str(mean)).replace("____Median____",str(median)).replace("____rate____",str(rate))
+        all_table2 += table_2 
+    
+    table_1.replace("____TABLE____" , all_content) 
+    total = table_1 + table_2 + table_3
+    htmlfile.write(total)
+    htmlfile.close()
 
 
 
