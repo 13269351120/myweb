@@ -81,9 +81,13 @@ def deal_with_each_task(all_path , task_name) :
 ## 
 def read_performance_txt(performance_txt , task_name):
     content = ''
+    path_info_arr = performance_txt.split('/')
+    date = path_info_arr[6]
+
     if os.path.getsize(performance_txt) > 0:
         perf_file = open(performance_txt, 'r')
         content += '<tr>'
+        content += '<td>' + date + '</td>'
         content += '<td>' + task_name + '</td>'
         while True:
             line = perf_file.readline()
@@ -103,7 +107,6 @@ def read_performance_txt(performance_txt , task_name):
 if __name__ == "__main__":
     (all_path , task_names ) = gat_performance(task_path,"performance.txt")
     all_content = "" 
-    table_1 = open(os.path.join(template_path , '1.html'),"r").read()
     
     table_3 = open(os.path.join(template_path , '3.html'),"r").read()
     
@@ -113,11 +116,11 @@ if __name__ == "__main__":
     for task_name in task_names : 
         (content , mean , median , rate , date) = deal_with_each_task(all_path , task_name) 
         all_content += content 
-        table_2 = open(os.path.join(template_path , '2.html'),"r").read().replace("____ERRORTITLE____","error_"+task_name).replace("____RATETITLE____","rate_"+task_name).replace("____date____",str(date)).replace("____Mean____",str(mean)).replace("____Median____",str(median)).replace("____rate____",str(rate))
+        table_2 = open(os.path.join(template_path , '2.html'),"r").read().replace("____ERRORTITLE____","error_"+task_name).replace("____RATETITLE____","rate_"+task_name).replace("____date____",str(date)).replace("____Mean____",str(mean)).replace("____Median____",str(median)).replace("____rate____",str(rate)).replace("____taskname____",str(task_name) )
         all_table2 += table_2 
-    
-    table_1.replace("____TABLE____" , all_content) 
-    total = table_1 + table_2 + table_3
+    #print "\033[1;33mall_content : " + all_content + "\033[0m" 
+    table_1 = open(os.path.join(template_path , '1.html'),"r").read().replace("____TABLE____",str(all_content))
+    total = table_1 + all_table2 + table_3
     htmlfile.write(total)
     htmlfile.close()
 

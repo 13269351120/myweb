@@ -1,46 +1,70 @@
 <hr>
+<h1>____taskname____</h1>
   <div id="____ERRORTITLE____" style="width:600px;height:400px"> </div>
 <script type="text/javascript">
 
     var myChart = echarts.init(document.getElementById("____ERRORTITLE____"));
 
     var option=
-        {
+    {
         title:
-        {text:"Error List"},
-        legend: {
-        data:['Mean Error','Median Error']
-    },
-    toolbox: {
-        feature: {
-            saveAsImage: {}
-        }
-    },
-           xAxis: {
-        type: 'category',
-        data: ____date____
-    },
-    yAxis: {
-        type: 'value'
-    },
-    series: [
         {
-            name:'Mean',
+            text:"Error List"
+        },
+        tooltip : 
+        {
+            trigger: 'axis',
+            axisPointer: 
+            {
+                type: 'cross',
+                label: 
+                {
+                    backgroundColor: '#6a7985'
+                }
+            }
+        },
+        legend: 
+        {
+            data:['Mean Error','Median Error']
+        },
+        toolbox: 
+        {
+            feature: 
+            {
+                saveAsImage: {}
+            }
+        },
+        xAxis: 
+        {
+            type: 'category',
+            boundaryGap : false ,
+            data: ____date____
+        },
+        yAxis: 
+        {
+            type: 'value'
+        },
+        series: 
+        [
+        {
+            name:'Mean Error',
             type:'line',
+            areaStyle: {},
             data:____Mean____
         },
         {
-            name:'Median',
+            name:'Median Error',
             type:'line',
+            areaStyle: {},
             data:____Median____
-        }]
         }
+        ]
+    }
         myChart.setOption(option);
         
         
         
 </script>   
-    <hr>
       <div id="____RATETITLE____" style="width:600px;height:400px"> </div>
 <script type="text/javascript">
 
@@ -49,24 +73,45 @@
     var option2=
     {
         title:
-        {text:"Rate List"},
-        toolbox: {
-        feature: {
-            saveAsImage: {}
-        }
-    },
-       xAxis: {
-        type: 'category',
-        data: ____date____
-    },
-    yAxis: {
-        type: 'value'
-    },
-    series: [{
-        data: ____rate____,
-        type: 'line'
-    }]
-        }
+        {
+            text:"Rate List"},
+            toolbox: 
+            {
+                feature: 
+                {
+                    saveAsImage: {}
+                }
+            },
+            tooltip : 
+            {
+                trigger: 'axis',
+                axisPointer: 
+                {
+                    type: 'cross',
+                    label: 
+                    {
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },
+            xAxis: 
+            {
+                type: 'category',
+                boundaryGap : false,
+                data: ____date____
+            },
+            yAxis: 
+            {
+                type: 'value'
+            },
+            series: 
+            [
+            {
+                data: ____rate____,
+                type: 'line'
+            }
+            ]
+    }
         myChart2.setOption(option2);
         
 </script>   
