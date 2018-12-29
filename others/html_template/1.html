@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Jobs</title>
+  <script src="http://echarts.baidu.com/dist/echarts.js"> </script>
+  <style>
+    table {
+      width: 80%;
+      #border-collapse: collapse;
+    }
+    
+    tr {
+      border: 1px solid #000;
+      height: 40px;
+    }
+    
+    tr:hover {
+      background-color: #E6E6E6;
+    }
+    
+    td {
+      border: 1px solid #000;
+      padding: 0;
+    }
+    
+    td:hover {
+      background-color: #E6E6E6 !important;
+    }
+  </style>
+</head>
+<body>
+
+<h1> Daily Jobs</h1>
+
+<HR style="FILTER: alpha(opacity=0,finishopacity=100,style=1)" width="100%" color=#C0C0C0 SIZE=1>
+
+  <table border="1" >
+    <tbody id="table">
+    <tr>
+    <th>Date</th>
+    <th>JobName</th>
+    <th>Time</th>
+    <th>Mean</th>
+    <th>Median</th>
+    <th>Rate</th>
+  </tr>
+  ____TABLE____
+</tbody>
+  </table>
+  <script>
+    table.addEventListener('mouseover', event => {
+      var arr = Array.from(event.target.parentNode.parentNode.children)
+      var index = [...event.target.parentNode.children].indexOf(event.target)
+
+      arr.forEach(i => Array.from(i.children).forEach(j => j.style.backgroundColor = null))
+      #arr.forEach(k => k.children[index].style.backgroundColor = 'yellow')
+    }, false)
+    table.addEventListener('mouseleave', event => {
+      var arr = Array.from(event.target.children)
+      arr.forEach(i => Array.from(i.children).forEach(j => j.style.backgroundColor = null))
+    }, false)
+  </script>
